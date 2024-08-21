@@ -1,26 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 import './Login.css';
-import hrmsMain from '../../Assets/login-info.png';
+import hrmsMain from '../../../../Assets/login-info.png';
 // import background from '../../Assets/background.jpg';
-import logo from '../../Assets/logo.jpeg';
+import logo from '../../../../Assets/logo.jpeg';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+function Login() {
+  const [employeeCode, setEmployeeCode] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (username === '' || password === '') {
-      setError('Please fill in all fields');
-      return;
-    }
-    if (username === 'admin' && password === 'password') {
-      navigate('/dashboard');
-    } else {
-      setError('Invalid username or password');
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/employee/login",
+        {
+          employeeCode,
+          password,
+        }
+      );
+      const EmployeeData = response.data;
+      if (EmployeeData) {
+        localStorage.setItem("employeeCode", employeeCode); // Store employeeCode in local storage
+        setError(null); // Clear the error state
+        alert("Login Successful!"); // Add an alert after successful login
+        navigate(`/employee/dashboard/${employeeCode}`);
+      } else {
+        setError("Invalid Credentials!!");
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        setError(error.response.data);
+        alert(error.response.data);
+      } else {
+        setError("Invalid Credentials!!");
+      }
     }
   };
 
@@ -40,8 +57,8 @@ const Login = () => {
               <input
                 type="text"
                 placeholder="Enter Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={employeeCode}
+                onChange={(e) => setEmployeeCode(e.target.value)}
               />
             </div>
             <div className="input-group">
