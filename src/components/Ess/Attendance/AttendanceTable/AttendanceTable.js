@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AttendanceTable.css';
+import Pagination from '../Pagination/Pagination';
 
 const sampleData = [
   { date: '07-01-2024', day: 'Monday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'A-A', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
@@ -21,8 +22,15 @@ const editedData = [
 
 const AttendanceTable = () => {
   const [showEdited, setShowEdited] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [entriesPerPage, setEntriesPerPage] = useState(5);
 
   const data = showEdited ? editedData : sampleData;
+
+  // Calculate the indices for slicing the data array
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+  const currentEntries = data.slice(indexOfFirstEntry, indexOfLastEntry);
 
   return (
     <div className="attendance-table">
@@ -48,7 +56,7 @@ const AttendanceTable = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, index) => (
+            {currentEntries.map((row, index) => (
               <tr key={index}>
                 <td className="action-cell">...</td>
                 <td>{row.date}</td>
@@ -66,6 +74,15 @@ const AttendanceTable = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Add the Pagination component below the table */}
+      <Pagination
+        totalEntries={data.length}
+        entriesPerPage={entriesPerPage}
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+        onEntriesChange={setEntriesPerPage}
+      />
     </div>
   );
 };

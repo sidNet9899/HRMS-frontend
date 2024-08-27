@@ -1,0 +1,49 @@
+
+
+.personal-information {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 1300px;
+}
+
+.personal-information h2 {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 20px;
+}
+
+.info-row div {
+  flex: 1;
+  color: #666;
+  
+ 
+}
+
+.info-row div:last-child {
+  text-align: center;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row:hover {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.info-row:hover div {
+  color: #1890ff;
+}
+

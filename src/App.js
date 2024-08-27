@@ -10,6 +10,8 @@ import Attendance from './components/Ess/Attendance/Attendance';
 import AdminLogin from './components/Auth/Admin/AdminLogin/AdminLogin';
 import EmployeeRegister from './components/Auth/Admin/EmployeeRegister/EmployeeRegister';
 import AdminDashboard from './components/Auth/Admin/AdminDashboard/AdminDashboard';
+import InvestmentDeclaration from './components/Ess/myInvestmentDeclaration/InvestmentDeclaration';
+import MyTDSDetails from './components/Ess/TaxComputation/MyTDSDetails';
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/admin/dashboard/:adminId" element={<AdminDashboard />} />
         <Route path="/employee/register/:adminId" element={<EmployeeRegister />} />
         <Route path="/employee/dashboard/:employeeCode" element={<Dashboard />} />
+        <Route path="/investmentDeclaration" element={<InvestmentDeclaration />} />
+        <Route path="/myTDSdetails" element={<MyTDSDetails />} />
         
         
         

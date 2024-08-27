@@ -1,0 +1,17 @@
+.tds-header-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex: 1;
+    position: relative; /* Ensure the header is positioned correctly */
+    z-index: 10; /* Bring the header to the front */
+    
+  }
+  
+  .tds-header-container h1 {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+    z-index: 11;
+  }
+  
