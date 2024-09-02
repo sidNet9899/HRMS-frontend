@@ -1,5 +1,5 @@
 import React from 'react';
-import InvestmentHeader from './InvestmentHeader';
+import InvestmentHeader from './InvestmentHeader/InvestmentHeader';
 import './InvestmentDeclaration.css';
 
 const InvestmentDeclaration = () => {

@@ -2,9 +2,10 @@
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
-    max-width: 100%;
-    margin: 0 auto;
+    width: 1340px; /* Ensure full width of the parent container */
+    margin-bottom: 20px; /* Space between components */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .tds-header {
@@ -25,6 +26,7 @@
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
+    table-layout: fixed; /* Prevent columns from shrinking too much */
 }
 
 .tds-table td {

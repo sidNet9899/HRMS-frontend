@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyTDSHeader.css';
 
-import backButtonImage from '../../../Assets/backButtonImage.jpg';
+import backButtonImage from '../../../../Assets/backButtonImage.jpg';
 
 const MyTDSHeader = () => {
   return (

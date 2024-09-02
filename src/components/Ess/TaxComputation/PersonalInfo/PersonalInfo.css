@@ -1,10 +1,9 @@
-
-
 .personal-information {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  margin-top: 80px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 1300px;
 }
@@ -12,7 +11,7 @@
 .personal-information h2 {
   text-align: left;
   font-size: 20px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .info-row {
@@ -26,8 +25,6 @@
 .info-row div {
   flex: 1;
   color: #666;
-  
- 
 }
 
 .info-row div:last-child {
@@ -47,3 +44,22 @@
   color: #1890ff;
 }
 
+@media (max-width: 768px) {
+  .personal-information {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-row div {
+    text-align: left;
+  }
+}
+
+.personal-information h2 {
+  font-size: 22px; /* or any size you prefer */
+}

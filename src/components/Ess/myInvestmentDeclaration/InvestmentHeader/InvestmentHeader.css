@@ -15,7 +15,7 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .header-section {
+  .investment-header-section {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -23,6 +23,6 @@
   
   h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 20px;
   }
   

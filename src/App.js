@@ -12,6 +12,15 @@ import EmployeeRegister from './components/Auth/Admin/EmployeeRegister/EmployeeR
 import AdminDashboard from './components/Auth/Admin/AdminDashboard/AdminDashboard';
 import InvestmentDeclaration from './components/Ess/myInvestmentDeclaration/InvestmentDeclaration';
 import MyTDSDetails from './components/Ess/TaxComputation/MyTDSDetails';
+import LoanRequest from './components/Ess/LoanRequest/LoanRequest';
+import MyInterview from './components/Ess/MyInterview/MyInterview';
+import PerformanceReview from './components/Ess/PerformanceReview/PerformanceReview';
+import SalaryStructure from './components/Ess/MySalaryStructure/SalaryStructure';
+import ShiftCalendar from './components/Ess/myShiftCalendar/ShiftCalendar';
+import SalarySlip from './components/Ess/SalarySlip/SalarySlip';
+import Resignation from './components/Ess/Resignation/Resignation';
+import Accolades from './components/Ess/MyAccolades/Accolades';
+
 
 
 function App() {
@@ -32,6 +41,15 @@ function App() {
         <Route path="/employee/dashboard/:employeeCode" element={<Dashboard />} />
         <Route path="/investmentDeclaration" element={<InvestmentDeclaration />} />
         <Route path="/myTDSdetails" element={<MyTDSDetails />} />
+        <Route path="/loanRequest" element={<LoanRequest />} />
+        <Route path="/myInterview" element={<MyInterview />} />
+        <Route path="/myPerformanceReview" element={<PerformanceReview />} />
+        <Route path="/mySalaryStructure" element={<SalaryStructure />} />
+        <Route path="/myShiftCalendar" element={<ShiftCalendar />} />
+        <Route path="/mySalarySlip" element={<SalarySlip />} />
+        <Route path="/myResignation" element={<Resignation />} />
+        <Route path="/myAccolades" element={<Accolades />} />
+
         
         
         
